@@ -32,4 +32,4 @@ let _ = <|>le m n                           ← <|> marks the point
 
 See `quick-peek-show' and `quick-peek-hide' for usage instructions.
 ")
-   (license #f))
+   (license #f)))
