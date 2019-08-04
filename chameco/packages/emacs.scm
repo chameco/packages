@@ -1,4 +1,7 @@
-(define-module (chameco packages emacs))
+(define-module (chameco packages emacs)
+  #:use-module (guix packages)
+  #:use-module (guix build-system emacs)
+  #:use-module (guix download))
 
 (define-public emacs-quick-peek
   (package
