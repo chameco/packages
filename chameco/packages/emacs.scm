@@ -36,3 +36,36 @@ let _ = <|>le m n                           ← <|> marks the point
 See `quick-peek-show' and `quick-peek-hide' for usage instructions.
 ")
    (license #f)))
+
+(define-public emacs-flycheck-inline
+  (package
+   (name "emacs-flycheck-inline")
+   (version "20190320.1611")
+   (source
+    (origin
+     (method url-fetch)
+     (uri (string-append
+           "https://melpa.org/packages/flycheck-inline-"
+           version
+           ".el"))
+     (sha256
+      (base32
+       "04zvaa58fnpp8yqdlab4dx06w61rplhsf28k9yyz2hh7ipamyzy2"))))
+   (build-system emacs-build-system)
+   (propagated-inputs
+    `(("emacs-flycheck" ,emacs-flycheck)))
+   (home-page
+    "https://github.com/flycheck/flycheck-inline")
+   (synopsis "Display Flycheck errors inline")
+   (description
+    "Provide an error display function to show Flycheck errors inline, directly
+below their location in the buffer.
+
+# Setup
+
+Enable the local minor mode for all flycheck-mode buffers:
+
+(with-eval-after-load 'flycheck
+  (add-hook 'flycheck-mode-hook #'flycheck-inline-mode))
+")
+   (license #f)))
