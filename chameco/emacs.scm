@@ -1,4 +1,4 @@
-(define-module (chameco packages emacs)
+(define-module (gnu packages chameco emacs)
   #:use-module (guix packages)
   #:use-module (guix build-system emacs)
   #:use-module (guix download)
