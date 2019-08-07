@@ -126,3 +126,37 @@ See the README for more info:
 https://github.com/wasamasa/eyebrowse
 ")
    (license #f)))
+
+(define-public emacs-vterm
+  (package
+   (name "emacs-vterm")
+   (version "20190806.1856")
+   (source
+    (origin
+     (method url-fetch)
+     (uri (string-append
+           "https://melpa.org/packages/vterm-"
+           version
+           ".tar"))
+     (sha256
+      (base32
+       "18lc6phrmlcxr173czp6z50bapsq2fsgk17mqzxvl1chcbdy75k3"))))
+   (build-system emacs-build-system)
+   (home-page
+    "https://github.com/akermu/emacs-libvterm")
+   (synopsis
+    "This package implements a terminal via libvterm")
+   (description
+    "This Emacs module implements a bridge to libvterm to display a terminal in a
+Emacs buffer.
+
+Installation
+
+And add this to your `init.el`:
+
+```
+(add-to-list 'load-path \"path/to/emacs-libvterm\")
+(require 'vterm)
+```
+")
+   (license #f)))
